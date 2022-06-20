@@ -1,0 +1,12 @@
+.App {
+  background-color: #3c2c3e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 0 5rem;
+  position: relative;
+  @media only screen and (max-width: 37.5em) {
+    padding: 4rem 0;
+  }
+}

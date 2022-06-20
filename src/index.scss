@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+//Breakpoints
+$medium: 46.9em;
+$small: 37.5em;
+$x-small: 18.75em;
+
+html {
+  font-size: 62.5%;
+  @media only screen and (max-width: $medium) {
+    font-size: 55%;
+  }
+  @media only screen and (max-width: $small) {
+    font-size: 50%;
+  }
+  @media only screen and (max-width: $x-small) {
+    font-size: 45%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
