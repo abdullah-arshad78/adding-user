@@ -63,6 +63,15 @@ const UserForm = props =>{
             setEnteredName("")
                 return;
             }
+        } else if(!validNameRegex.test(enteredName)){
+            if(enteredAge<=0 || enteredAge>110){
+                setValidName(false);
+                setValidAge(false)
+                props.onErrorHandler(true, errorMessages.inputError);
+                setEnteredName("");
+                setEnteredAge("")
+                return;
+            }
         }
         const userObject = {
             id: Math.random().toString(),
@@ -80,11 +89,11 @@ const UserForm = props =>{
         return (
         <form className={styles["user-form"]} onSubmit={submitFormHAndler}>
             <div className={`${styles["form-controls"]} ${!validName &&styles["invalid"]}`}>
-                <label for="name">Name</label>
+                <label htmlFor="name">Name</label>
                 <input value={enteredName} id="name" type="text" placeholder="Full Name" onChange={setNameHandler}></input>
             </div>
             <div className={`${styles["form-controls"]} ${!validAge && styles["invalid"]}`}>
-                <label for="age">Age</label>
+                <label htmlFor="age">Age (years)</label>
                 <input value={enteredAge} id="age" type="number" placeholder="Age" onChange={setAgeHandler}></input>
             </div>
             <Button type="submit">Add User</Button>
